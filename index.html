@@ -1,519 +1,964 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <script async src="https://analytics.aravindha.in/script.js" data-website-id="0def1fd3-4c9a-463d-856a-aa9776861673"></script>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Priya Sakthi</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priya Sakthi — Software Engineer & AI Specialist</title>
+  <meta name="description" content="Engineer at the intersection of energy systems and AI. I publish research on renewable energy, build custom AI agents, and train AI models.">
+  <meta name="author" content="Priya Sakthi">
+  <link rel="icon" type="image/png" href="img/favicon.png">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Priya Sakthi — Software Engineer & AI Specialist">
+  <meta property="og:description" content="Engineer at the intersection of AI and energy systems.">
+  <meta property="og:url" content="https://priyasakthi.com">
+  <meta property="og:type" content="website">
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/gijgo.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slicknav.css">
+  <style>
+    /* === Design tokens === */
+    :root {
+      --navy: #3D5A80;
+      --navy-dark: #2C4A6E;
+      --navy-darker: #1E3A5F;
+      --light-blue: #DBEAFE;
+      --light-blue-soft: #EBF2FB;
+      --soft-bg: #F8FAFC;
+      --red: #DC2F3C;
+      --red-hover: #B82430;
+      --red-soft: #FF6B7A;
+      --white: #FFFFFF;
+      --text-dark: #1E3A5F;
+      --text-body: #475569;
+      --text-muted: #64748B;
+      --border: #DBEAFE;
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+      --font-serif: 'Times New Roman', Georgia, 'Liberation Serif', serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+      --max-width: 1100px;
+      --radius: 6px;
+      --radius-sm: 4px;
+    }
+
+    /* === Reset === */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* === Base === */
+    body {
+      font-family: var(--font-serif);
+      color: var(--text-dark);
+      line-height: 1.5;
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 28px; }
+
+    /* === Header & nav === */
+    .site-header {
+      background: var(--navy);
+      padding: 16px 0;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .nav__brand {
+      color: var(--white);
+      font-size: 22px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .nav__brand:hover { text-decoration: none; color: var(--white); }
+    .nav__links {
+      display: flex;
+      gap: 26px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      font-size: 14px;
+    }
+    .nav__links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding-bottom: 3px;
+      transition: color 0.15s;
+    }
+    .nav__links a:hover { color: var(--white); text-decoration: none; }
+    .nav__links a.active {
+      color: var(--white);
+      border-bottom: 1.5px solid var(--red);
+    }
+    .nav__toggle { display: none; }
+
+    /* === Hero === */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 70px 0 60px;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 2.1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero__eyebrow {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(219,234,254,0.95);
+      margin-bottom: 18px;
+    }
+    .hero__title {
+      font-size: 50px;
+      font-weight: 400;
+      margin: 0 0 18px;
+      line-height: 1.08;
+    }
+    .hero__title .name {
+      color: var(--red-soft);
+      font-style: italic;
+    }
+    .hero__description {
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(219,234,254,0.95);
+      margin: 0 0 30px;
+      max-width: 560px;
+    }
+    .hero__actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .hero__photo {
+      display: flex;
+      justify-content: center;
+    }
+    .photo {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: var(--light-blue);
+      border: 4px solid var(--red);
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    /* === Buttons === */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.15s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: var(--red-hover);
+      text-decoration: none;
+      color: var(--white);
+    }
+    .btn--icon {
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      justify-content: center;
+      background: rgba(219,234,254,0.18);
+    }
+    .btn--icon:hover { background: rgba(219,234,254,0.30); }
+    .btn--icon svg { stroke: var(--white); }
+    .btn--outline {
+      background: transparent;
+      color: var(--navy-darker);
+      border: 1px solid var(--navy-darker);
+      padding: 10px 22px;
+    }
+    .btn--outline:hover { background: var(--navy-darker); color: var(--white); }
+    .btn svg { width: 16px; height: 16px; }
+
+    /* === Stats strip === */
+    .stats {
+      padding: 32px 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--light-blue);
+    }
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .stat__number {
+      font-size: 38px;
+      font-weight: 500;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat__label {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* === Section structure === */
+    .section { padding: 80px 0; }
+    .section--gray { background: var(--soft-bg); }
+    .section--blue { background: var(--light-blue-soft); }
+    .section__header {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .section__eyebrow {
+      font-family: var(--font-sans);
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section__title {
+      font-size: 38px;
+      font-weight: 400;
+      color: var(--navy-darker);
+      margin: 0;
+      font-style: italic;
+    }
+    .section__subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 520px;
+      margin: 12px auto 0;
+      line-height: 1.5;
+    }
+    .section__header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .section__header-row .section__title {
+      font-size: 28px;
+      text-align: left;
+    }
+    .section__header-row .section__eyebrow {
+      text-align: left;
+      margin-bottom: 4px;
+    }
+    .link-arrow {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--red);
+      text-decoration: none;
+    }
+    .link-arrow:hover { text-decoration: underline; }
+
+    /* === Services === */
+    .services__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .service-card--engineering { border-top: 4px solid var(--navy); }
+    .service-card--ai { border-top: 4px solid var(--red); }
+    .service-card__head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .service-card__icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .service-card--engineering .service-card__icon { background: var(--light-blue); color: var(--navy-darker); }
+    .service-card--ai .service-card__icon { background: rgba(220,47,60,0.1); color: var(--red); }
+    .service-card__icon svg { width: 20px; height: 20px; }
+    .service-card__title {
+      font-size: 22px;
+      color: var(--navy-darker);
+      margin: 0;
+      font-weight: 500;
+    }
+    .service-card__subtitle {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 0 0 18px;
+    }
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--light-blue);
+    }
+    .service-list li {
+      padding: 11px 0;
+      border-bottom: 1px dashed var(--light-blue);
+      display: flex;
+      gap: 12px;
+    }
+    .service-list li:last-child { border-bottom: none; }
+    .service-list li::before {
+      content: "●";
+      color: var(--red);
+      flex-shrink: 0;
+      font-size: 10px;
+      margin-top: 6px;
+    }
+    .service-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--navy-darker);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .service-desc {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* === Featured projects === */
+    .projects__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: transform 0.18s, box-shadow 0.18s;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(30,58,95,0.08);
+      text-decoration: none;
+    }
+    .project-card__tags {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .tag--engineering { background: var(--light-blue); color: var(--navy-darker); }
+    .tag--ai { background: rgba(220,47,60,0.1); color: var(--red); }
+    .tag--current { background: rgba(220,47,60,0.1); color: var(--red); }
+    .tag--research { background: #FEF3C7; color: #92400E; }
+    .tag--rl { background: var(--light-blue); color: var(--navy-darker); }
+    .project-card__title {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--navy-darker);
+      margin: 0 0 8px;
+      line-height: 1.3;
+    }
+    .project-card__description {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* === Publications === */
+    .pubs__list {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .pub {
+      display: flex;
+      gap: 20px;
+      padding: 22px 0;
+      border-top: 1px solid var(--light-blue);
+    }
+    .pub:last-of-type { border-bottom: 1px solid var(--light-blue); }
+    .pub__year {
+      flex-shrink: 0;
+      width: 70px;
+      text-align: center;
+    }
+    .pub__year-label {
+      background: var(--light-blue);
+      color: var(--navy-darker);
+      padding: 8px 4px;
+      border-radius: var(--radius-sm);
+      font-size: 18px;
+      font-weight: 500;
+      display: block;
+    }
+    .pub__num {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .pub__body { flex: 1; min-width: 0; }
+    .pub__title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--navy-darker);
+      line-height: 1.4;
+      margin: 0 0 6px;
+    }
+    .pub__authors {
+      font-size: 14px;
+      color: var(--text-body);
+      margin: 0 0 6px;
+    }
+    .pub__authors .self {
+      color: var(--red);
+      font-weight: 500;
+    }
+    .pub__venue {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin: 0 0 8px;
+    }
+    .pub__link {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--red);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .pub__link:hover { text-decoration: underline; }
+    .pub__link svg { width: 12px; height: 12px; }
+    .pubs__cta {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    /* === GitHub Activity === */
+    .activity__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .activity-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    .activity-card__title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--navy-darker);
+      margin: 0 0 14px;
+    }
+    .activity-card__title svg { width: 18px; height: 18px; }
+    .gh-grid {
+      display: grid;
+      grid-template-columns: repeat(20, 1fr);
+      gap: 3px;
+      margin-bottom: 10px;
+    }
+    .gh-grid div {
+      aspect-ratio: 1;
+      border-radius: 2px;
+    }
+    .gh-grid__legend {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .log__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .log__list li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--light-blue);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text-body);
+    }
+    .log__list li:last-child { border-bottom: none; }
+    .log__date {
+      color: var(--text-muted);
+      font-size: 11px;
+      margin-right: 8px;
+      font-weight: 500;
+    }
+
+    /* === Blog === */
+    .blog__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .blog-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .blog-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(30,58,95,0.08);
+      text-decoration: none;
+    }
+    .blog-card__meta {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      color: var(--red);
+      letter-spacing: 1.2px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .blog-card__title {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--navy-darker);
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    /* === Footer === */
+    .footer {
+      background: var(--navy-darker);
+      color: var(--white);
+      padding: 64px 0 36px;
+      text-align: center;
+    }
+    .footer__title {
+      font-size: 34px;
+      font-weight: 400;
+      font-style: italic;
+      margin: 0 0 8px;
+      color: var(--white);
+    }
+    .footer__subtitle {
+      color: rgba(219,234,254,0.85);
+      font-size: 15px;
+      margin: 0 0 26px;
+    }
+    .footer__links {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 32px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+    .footer__links a {
+      color: rgba(219,234,254,0.85);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s;
+    }
+    .footer__links a:hover { color: var(--white); text-decoration: none; }
+    .footer__links svg { width: 16px; height: 16px; }
+    .footer__copyright {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: rgba(219,234,254,0.5);
+      margin-top: 32px;
+    }
+
+    /* === Mobile === */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav__links { display: none; }
+      .hero { padding: 50px 0 40px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .hero__title { font-size: 36px; }
+      .hero__description { max-width: 100%; }
+      .hero__actions { justify-content: center; flex-wrap: wrap; }
+      .hero__photo { order: -1; }
+      .photo { width: 150px; height: 150px; }
+      .stats__grid { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+      .services__grid, .projects__grid, .activity__grid, .blog__grid { grid-template-columns: 1fr; }
+      .section { padding: 56px 0; }
+      .section__title { font-size: 30px; }
+      .footer__title { font-size: 26px; }
+      .pub { gap: 14px; padding: 18px 0; }
+      .pub__year { width: 56px; }
+      .pub__year-label { font-size: 15px; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- header-start -->
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid ">
-                    <div class="header_bottom_border">
-                        <div class="row align-items-center">
-                            <!-- <div class="col-xl-2 col-lg-2">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/logo.png" alt="">
-                                    </a>
-                                </div>
-                            </div> -->
-                            <div class="col-xl-12 col-lg-12">
-                                <div class="main-menu  d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a href="/">Home</a></li>
-                                            <li><a href="#">Works</a></li>
-                                            <li><a href="#">Services</a></li>
-                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                        <li><a href="#">work details</a></li>
-                                                        <li><a href="#">elements</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">about</a></li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="#">blog</a></li>
-                                                    <li><a href="#">single-blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <!-- <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                <div class="Appointment">
-                                    <div class="book_btn d-none d-lg-block">
-                                        <a href="#">Let’s Talk</a>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- header-end -->
-
-    <!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="single_slider d-flex align-items-center slider_bg_1">
-            <div class="container">
-                <div class="row align-items-center position-relative">
-                    <div class="col-lg-8">
-                        <div class="slider_text">
-                            <h3 style="margin-bottom: 20px">Hi there, <br> I am Priya Sakthi</h3>
-                            <span class="" style="color: #DB9A64; font-size: 30px">Renewable Energy Specialist</span>
-                        <!-- <a class="boxed-btn3-line" href="#">View Works</a> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-3 d-none d-lg-block">
-                        <img src="img/about/my_img.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- ========== Header ========== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Main">
+        <a href="/" class="nav__brand">Priya Sakthi</a>
+        <ul class="nav__links">
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="mailto:priyasakthi1997@gmail.com" class="active">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <!-- slider_area_end -->
+  </header>
 
-    <div class="download_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-10">
-                    <div class="download_text">
-                        <h3>I'm a highly motivated and results-driven mechanical engineer with a passion for sustainable energy solutions.</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="download_left text-justify">
-                        <p>My background spans project management, research and development, and design engineering, allowing me to approach challenges with a holistic perspective. I thrive in collaborative environments where I can leverage my strong analytical and problem-solving skills to contribute to innovative projects.</p>
-                        <p>I'm particularly drawn to the dynamic field of renewable energy and dedicated to applying my expertise to advance the transition towards a greener future.  I'm eager to connect with organizations and individuals who share my commitment to environmental responsibility and technological advancement.</p>
-                        <a href="#" class="boxed-btn3-line">Download CV</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 offset-lg-1 col-md-6">
-                    <div class="progress_skills">
-                        <div class="single_progress">
-                            <div class="label d-flex justify-content-between">
-                                <span>Renewable Energy Systems</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar " role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="single_progress">
-                            <div class="label d-flex justify-content-between">
-                                <span>Project Management</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar " role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="single_progress">
-                            <div class="label d-flex justify-content-between">
-                                <span>Engineering Design</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="single_progress">
-                            <div class="label d-flex justify-content-between">
-                                <span>Communication & Collaboration</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ========== Hero ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <div class="hero__eyebrow">Software Engineer · AI Specialist · Researcher</div>
+          <h1 class="hero__title">Hi, I'm <span class="name">Priya Sakthi</span></h1>
+          <p class="hero__description">Engineer at the intersection of energy systems and AI. I publish research on renewable energy, build custom AI agents, and train AI models.</p>
+          <div class="hero__actions">
+            <a href="mailto:priyasakthi1997@gmail.com" class="btn" aria-label="Email Priya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+              Email me
+            </a>
+            <a href="https://www.linkedin.com/in/priya-sakthi/" class="btn btn--icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/priyasakthi1" class="btn btn--icon" aria-label="GitHub" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=cS_CgbUAAAAJ&hl=en" class="btn btn--icon" aria-label="Google Scholar" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </a>
+          </div>
         </div>
+        <div class="hero__photo">
+          <img src="img/my_img.png" alt="Priya Sakthi" class="photo" onerror="this.style.display='none'">
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- service_area start  -->
-    <div class="service_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title mb-50">
-                        <h3>Services</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service text-center">
-                        <div class="icon">
-                            <img src="img/svg_icon/1.svg" alt="">
-                        </div>
-                        <h3>Renewable Energy Project Consulting</h3>
-                        <p class="">I provide expert analysis and guidance on renewable energy projects, from feasibility studies to implementation and optimization.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service text-center">
-                        <div class="icon">
-                            <img src="img/svg_icon/2.svg" alt="">
-                        </div>
-                        <h3>Engineering Design and Analysis</h3>
-                        <p class="py-3">I offer comprehensive design and analysis services using SolidWorks and AutoCAD software.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service text-center">
-                        <div class="icon">
-                            <img src="img/svg_icon/3.svg" alt="">
-                        </div>
-                        <h3>Technical Report Writing and Grant Proposals</h3>
-                        <p class="py-3">I can help you communicate your research effectively through clear and concise technical reports.</p>
-                    </div>
-                </div>
-            </div>
+  <!-- ========== Stats strip ========== -->
+  <section class="stats" aria-label="Quick stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div>
+          <div class="stat__number">3</div>
+          <div class="stat__label">Published papers</div>
         </div>
+        <div>
+          <div class="stat__number">7+</div>
+          <div class="stat__label">Years experience</div>
+        </div>
+        <div>
+          <div class="stat__number">15+</div>
+          <div class="stat__label">Projects delivered</div>
+        </div>
+        <div>
+          <div class="stat__number">Daily</div>
+          <div class="stat__label">AI tooling</div>
+        </div>
+      </div>
     </div>
-    <!-- service_area end  -->
+  </section>
 
-    <div class="service_products" style="padding-top: 50px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title mb-50">
-                        <h3>Projects</h3>
-                    </div>
-                </div>
+  <!-- ========== Services ========== -->
+  <section class="section section--gray" id="services">
+    <div class="container">
+      <header class="section__header">
+        <div class="section__eyebrow">— What I do —</div>
+        <h2 class="section__title">Services</h2>
+      </header>
+
+      <div class="services__grid">
+
+        <article class="service-card service-card--engineering">
+          <div class="service-card__head">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
-            <div class="service_wrap">
-                <div class="row align-items-center">
-                    <div class="col-md-6 col-lg-5">
-                        <div class="thumb">
-                            <img src="img/service/project1.jpeg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="service_text padding_left">
-                            <h3>Pre-Feasibility Study for Hydrogen Production in Newfoundland and Labrador </h3>
-                            <p>Conducted a comprehensive pre-feasibility study to assess the potential for hydrogen production, storage, and distribution in Newfoundland and Labrador </p>
-                            <p>Utilized various analytical tools and models to evaluate the technical and economic feasibility of different hydrogen production pathways </p>
-                            <a href="works_details.html" class="boxed-btn3-line">View Project</a>
-                        </div>
-                    </div>
-                </div>
+            <h3 class="service-card__title">Engineering</h3>
+          </div>
+          <p class="service-card__subtitle">Renewable energy · CAD · simulation · technical writing</p>
+          <ul class="service-list">
+            <li><div><span class="service-name">Renewable energy systems modeling</span><span class="service-desc">HOMER, PLEXOS — hybrid systems for hydrogen, wind, solar, hydro.</span></div></li>
+            <li><div><span class="service-name">Feasibility & techno-economic studies</span><span class="service-desc">Pre-feasibility, supply chain modeling, cost optimization.</span></div></li>
+            <li><div><span class="service-name">CFD & simulation</span><span class="service-desc">ANSYS — fluid flow, turbines, foundations.</span></div></li>
+            <li><div><span class="service-name">CAD design</span><span class="service-desc">SolidWorks, AutoCAD — ISO-compliant industrial equipment.</span></div></li>
+            <li><div><span class="service-name">Technical writing & grant proposals</span><span class="service-desc">Research papers, technical reports, funding applications.</span></div></li>
+          </ul>
+        </article>
+
+        <article class="service-card service-card--ai">
+          <div class="service-card__head">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="15" x2="22" y2="15"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="15" x2="4" y2="15"/></svg>
             </div>
-            <div class="service_wrap">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="service_text ">
-                            <h3>Microgrid Design and Optimization for Local Communities</h3>
-                            <p>Led the development and optimization of microgrid systems for remote communities in Newfoundland and Labrador </p>
-                            <p>Integrated renewable energy sources such as wind, solar, and hydropower to create reliable and sustainable power solutions </p>
-                            <a href="works_details.html" class="boxed-btn3-line">View Project</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-5">
-                        <div class="thumb padding_left">
-                            <img src="img/service/project2.jpeg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="service_wrap">
-                <div class="row align-items-center">
-                    <div class="col-md-6 col-lg-5">
-                        <div class="thumb">
-                            <img src="img/service/project3.jpeg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="service_text padding_left">
-                            <h3>Numerical Study of Turbulent Flow Around Tidal Turbine Foundations</h3>
-                            <p>Investigated the hydrodynamic forces acting on submerged tidal turbine foundations using computational fluid dynamics (CFD) analysis in ANSYS. </p>
-                            <p>Optimized foundation designs to enhance energy efficiency and minimize operational risks associated with turbulent flow conditions </p>
-                            <a href="works_details.html" class="boxed-btn3-line">View Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <h3 class="service-card__title">AI</h3>
+          </div>
+          <p class="service-card__subtitle">Code review · custom agents · training · agentic tooling</p>
+          <ul class="service-list">
+            <li><div><span class="service-name">AI code review & evaluation</span><span class="service-desc">Python, Rust, R — correctness, performance, security, idioms.</span></div></li>
+            <li><div><span class="service-name">Custom GPTs & agent workflows</span><span class="service-desc">Purpose-built assistants for research, writing, engineering.</span></div></li>
+            <li><div><span class="service-name">AI training & rubric design</span><span class="service-desc">Task design, test cases, evaluation frameworks.</span></div></li>
+            <li><div><span class="service-name">Agentic coding tooling</span><span class="service-desc">Claude Code, Codex, opencode + MCP server integration.</span></div></li>
+            <li><div><span class="service-name">AI consulting for technical teams</span><span class="service-desc">Helping engineers and researchers use AI tools well.</span></div></li>
+          </ul>
+        </article>
+
+      </div>
     </div>
+  </section>
 
-    <!-- gallery_area start  -->
-    <!-- <div class="gallery_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title mb-50">
-                        <h3>My Works</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-xl-10 col-lg-10">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/1.png" alt="">
-                                </div>
-                                <div class="gallery_heading">
-                                    <span>Mobile App</span>
-                                    <a href="works_details.html"><h4>Colorlib App Project</h4></a>
-                                </div>
-                            </div>
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/2.png" alt="">
-                                </div>
-                                <div class="gallery_heading">
-                                    <span>Mobile App</span>
-                                    <a href="works_details.html"><h4>Colorlib App Project</h4></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/3.png" alt="">
-                                </div>
-                                <div class="gallery_heading">
-                                    <span>Mobile App</span>
-                                    <a href="works_details.html"><h4>Colorlib App Project</h4></a>
-                                </div>
-                            </div>
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/4.png" alt="">
-                                </div>
-                                <div class="gallery_heading">
-                                    <span>Mobile App</span>
-                                    <a href="works_details.html"><h4>Colorlib App Project</h4></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="more_works">
-                                    <a class="boxed-btn3-line" href="#">More Works</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ========== Featured projects ========== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__header-row">
+        <div>
+          <div class="section__eyebrow">— Featured —</div>
+          <h2 class="section__title">Projects</h2>
         </div>
-    </div> -->
-    <!-- gallery_area end  -->
+        <a href="projects.html" class="link-arrow">View all 15 →</a>
+      </div>
 
-        <!-- testimonial_area  -->
-        <!-- <div class="testimonial_area ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="section_title">
-                            <h3>What Clients say</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="testmonial_active owl-carousel">
-                            <div class="single_carousel">
-                                <div class="row">
-                                    <div class="col-xl-9 col-md-9">
-                                        <div class="single_testmonial">
-                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority
-                                                have suffered alteration in some form by injected humour or randomised words
-                                                which don’t look even slightly believable. If you are going to use a passage.
-                                            </p>
-                                            <div class="testmonial_author">
-                                                <div class="thumb">
-                                                    <img src="img/case/testmonial.png" alt="">
-                                                </div>
-                                                <div class="author_name">
-                                                    <h3>Kalvin Piterson</h3>
-                                                    <span>Business Owner</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_carousel">
-                                <div class="row">
-                                    <div class="col-xl-9 col-md-9">
-                                        <div class="single_testmonial">
-                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority
-                                                have suffered alteration in some form by injected humour or randomised words
-                                                which don’t look even slightly believable. If you are going to use a passage.
-                                            </p>
-                                            <div class="testmonial_author">
-                                                <div class="thumb">
-                                                    <img src="img/case/testmonial.png" alt="">
-                                                </div>
-                                                <div class="author_name">
-                                                    <h3>Kalvin Piterson</h3>
-                                                    <span>Business Owner</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_carousel">
-                                <div class="row">
-                                    <div class="col-xl-9 col-md-9">
-                                        <div class="single_testmonial">
-                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority
-                                                have suffered alteration in some form by injected humour or randomised words
-                                                which don’t look even slightly believable. If you are going to use a passage.
-                                            </p>
-                                            <div class="testmonial_author">
-                                                <div class="thumb">
-                                                    <img src="img/case/testmonial.png" alt="">
-                                                </div>
-                                                <div class="author_name">
-                                                    <h3>Kalvin Piterson</h3>
-                                                    <span>Business Owner</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- /testimonial_area  -->
-    
-    <!-- footer start -->
-    <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="lets_talk">
-                            <h3>Do you have any Project? <a href="#">Let’s Talk</a> </h3>
-                            <p>Connect with me to explore opportunities in renewable energy.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <a href="https://www.linkedin.com/in/priya-sakthi/"> 
-                            <div class="single_links d-flex justify-content-between align-items-center">
-                                <span>Linkedin</span>
-                                <i class="fa fa-linkedin" style="color: white"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="#"> 
-                            <div class="single_links d-flex justify-content-between align-items-center">
-                                <span>Instagram</span>
-                                <i class="fa fa-instagram" style="color: white"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="#"> 
-                            <div class="single_links d-flex justify-content-between align-items-center">
-                                <span>Facebook</span>
-                                <i class="fa fa-facebook" style="color: white"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="#"> 
-                            <div class="single_links d-flex justify-content-between align-items-center">
-                                <span>Medium</span>
-                                <i class="fa fa-medium" style="color: white"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <div class="projects__grid">
+
+        <a href="projects.html#geothermal-hybrid" class="project-card">
+          <div class="project-card__tags">
+            <span class="tag tag--engineering">Engineering</span>
+            <span class="tag tag--current">Current</span>
+          </div>
+          <h3 class="project-card__title">Geothermal Hybrid Model for Diesel Replacement</h3>
+          <p class="project-card__description">Alternative to diesel generators for remote NL communities. Active research, 2023 – ongoing.</p>
+        </a>
+
+        <a href="projects.html#hydrogen-production-modelling" class="project-card">
+          <div class="project-card__tags">
+            <span class="tag tag--engineering">Engineering</span>
+            <span class="tag tag--research">Research</span>
+          </div>
+          <h3 class="project-card__title">Hydrogen Production System Modelling</h3>
+          <p class="project-card__description">Research and PLEXOS modelling of hydrogen production systems, including Canada-to-Germany supply chain analysis.</p>
+        </a>
+
+        <a href="projects.html#codebase-exploration-rl" class="project-card">
+          <div class="project-card__tags">
+            <span class="tag tag--ai">AI</span>
+            <span class="tag tag--rl">RL</span>
+          </div>
+          <h3 class="project-card__title">Codebase Exploration RL Environment</h3>
+          <p class="project-card__description">Built RL training tasks teaching AI agents to reason about unfamiliar repositories.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Publications ========== -->
+  <section class="section section--blue" id="publications">
+    <div class="container">
+      <header class="section__header">
+        <div class="section__eyebrow">— Peer-reviewed research —</div>
+        <h2 class="section__title">Publications</h2>
+        <p class="section__subtitle">Three peer-reviewed papers on hydrogen energy systems and Canadian supply chains.</p>
+      </header>
+
+      <div class="pubs__list">
+
+        <article class="pub">
+          <div class="pub__year">
+            <span class="pub__year-label">2024</span>
+            <div class="pub__num">Paper 01</div>
+          </div>
+          <div class="pub__body">
+            <h3 class="pub__title">Sustainable Hydrogen Production, Storage, and Distribution: A Systematic Review for Newfoundland and Labrador</h3>
+            <p class="pub__authors"><span class="self">Sakthi P</span>, Ghahremanlou D, Lardi A.</p>
+            <p class="pub__venue">Journal of Sustainable Development · Vol. 17, No. 1 · pp. 1–20</p>
+            <a href="https://doi.org/10.5539/jsd.v17n1p1" class="pub__link" target="_blank" rel="noopener">
+              doi.org/10.5539/jsd.v17n1p1
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub__year">
+            <span class="pub__year-label">2024</span>
+            <div class="pub__num">Paper 02</div>
+          </div>
+          <div class="pub__body">
+            <h3 class="pub__title">A Comprehensive Systematic Overview of Canadian Hydrogen Supply Chains Downstream</h3>
+            <p class="pub__authors">Farahmand F, King J, Ghahremanlou D, <span class="self">Sakthi P</span>, Jafari MRM.</p>
+            <p class="pub__venue">Journal of Sustainable Development · Vol. 17, No. 2 · pp. 1–15</p>
+            <a href="https://doi.org/10.5539/jsd.v17n2p1" class="pub__link" target="_blank" rel="noopener">
+              doi.org/10.5539/jsd.v17n2p1
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub__year">
+            <span class="pub__year-label">2024</span>
+            <div class="pub__num">Paper 03</div>
+          </div>
+          <div class="pub__body">
+            <h3 class="pub__title">A Systematic Review and Bibliometric Analysis of Sustainable Hydrogen Production and Distribution in Canada</h3>
+            <p class="pub__authors"><span class="self">Sakthi P</span>, Ghahremanlou D.</p>
+            <p class="pub__venue">Journal of Green Economy and Low-Carbon Development · Vol. 3, No. 3 · pp. 132–160</p>
+            <a href="https://doi.org/10.56578/jgelcd030301" class="pub__link" target="_blank" rel="noopener">
+              doi.org/10.56578/jgelcd030301
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="pubs__cta">
+        <a href="https://scholar.google.com/citations?user=cS_CgbUAAAAJ&hl=en" class="btn btn--outline" target="_blank" rel="noopener">
+          View on Google Scholar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GitHub Activity ========== -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="activity__grid">
+
+        <article class="activity-card">
+          <h3 class="activity-card__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub activity
+          </h3>
+          <img src="https://ghchart.rshah.org/3D5A80/priyasakthi1" alt="Priya's GitHub contribution graph" style="width: 100%; height: auto; margin-bottom: 10px;" />
+          <div class="gh-grid__legend">
+            <a href="https://github.com/priyasakthi1" target="_blank" rel="noopener">@priyasakthi1</a> · auto-updating
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Blog teaser ========== -->
+  <section class="section" id="blog">
+    <div class="container">
+      <div class="section__header-row">
+        <div>
+          <div class="section__eyebrow">— Weekly —</div>
+          <h2 class="section__title">From the blog</h2>
         </div>
-        
-    </footer>
-    <!--/ footer end  -->
+        <a href="blog.html" class="link-arrow">All posts →</a>
+      </div>
 
-    <!-- link that opens popup -->
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
-    <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <!-- <script src="js/gijgo.min.js"></script> -->
-    <script src="js/slick.min.js"></script>
+      <div class="blog__grid">
+        <a href="blog.html" class="blog-card">
+          <div class="blog-card__meta">AI · 5 min</div>
+          <h3 class="blog-card__title">How I review Rust code with Claude</h3>
+        </a>
+        <a href="blog.html" class="blog-card">
+          <div class="blog-card__meta">Engineering · 7 min</div>
+          <h3 class="blog-card__title">Modelling H₂ in PLEXOS — lessons learned</h3>
+        </a>
+        <a href="blog.html" class="blog-card">
+          <div class="blog-card__meta">AI · 4 min</div>
+          <h3 class="blog-card__title">Custom GPTs that actually save time</h3>
+        </a>
+      </div>
+    </div>
+  </section>
 
+  <!-- ========== Footer ========== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <h2 class="footer__title">Got a project in mind?</h2>
+      <p class="footer__subtitle">Available for engineering consulting and AI work.</p>
+      <a href="mailto:priyasakthi1997@gmail.com" class="btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        priyasakthi1997@gmail.com
+      </a>
 
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/priya-sakthi/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/priyasakthi1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="https://scholar.google.com/citations?user=cS_CgbUAAAAJ&hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Google Scholar
+        </a>
+      </div>
 
-    <!--contact js-->
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
+      <div class="footer__copyright">© 2026 Priya Sakthi · St. John's, NL, Canada</div>
+    </div>
+  </footer>
 
-
-    <script src="js/main.js"></script>
 </body>
-
 </html>
