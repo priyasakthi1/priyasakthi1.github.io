@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Priya Sakthi</title>
+  <meta name="description" content="All projects by Priya Sakthi — 8 engineering and 7 AI projects across renewable energy, software engineering, and AI training.">
+  <meta name="author" content="Priya Sakthi">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233D5A80'/%3E%3Ctext x='16' y='23' font-family='Times New Roman, serif' font-size='22' fill='%23DC2F3C' text-anchor='middle' font-style='italic' font-weight='500'%3EP%3C/text%3E%3C/svg%3E">
+
+  <style>
+    /* === Design tokens === */
+    :root {
+      --navy: #3D5A80;
+      --navy-dark: #2C4A6E;
+      --navy-darker: #1E3A5F;
+      --light-blue: #DBEAFE;
+      --light-blue-soft: #EBF2FB;
+      --soft-bg: #F8FAFC;
+      --red: #DC2F3C;
+      --red-hover: #B82430;
+      --red-soft: #FF6B7A;
+      --white: #FFFFFF;
+      --text-dark: #1E3A5F;
+      --text-body: #475569;
+      --text-muted: #64748B;
+      --border: #DBEAFE;
+      --font-serif: 'Times New Roman', Georgia, 'Liberation Serif', serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --max-width: 1100px;
+      --radius: 6px;
+      --radius-sm: 4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; font-family: var(--font-serif); color: var(--text-dark); line-height: 1.5; background: var(--white); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 28px; }
+
+    /* === Top decorative band === */
+    .top-band {
+      height: 36px;
+      background-color: #15294A;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 2 L22 12 L12 22 L2 12 Z' fill='none' stroke='%23ffffff' stroke-width='0.6' stroke-opacity='0.22'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #1E3A5F 0%, #15294A 100%);
+      background-size: 24px 24px, cover;
+      background-repeat: repeat, no-repeat;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* === Header === */
+    .site-header {
+      background: linear-gradient(135deg, #4A6595 0%, #3D5A80 100%);
+      padding: 16px 0;
+      position: relative;
+      box-shadow: 0 2px 12px rgba(30,58,95,0.15);
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .nav__brand { color: var(--white); font-size: 22px; font-weight: 500; text-decoration: none; letter-spacing: 0.3px; }
+    .nav__brand:hover { text-decoration: none; color: var(--white); }
+    .nav__links { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-family: var(--font-sans); font-size: 14px; }
+    .nav__links a { color: rgba(255,255,255,0.85); text-decoration: none; padding-bottom: 3px; transition: color 0.15s; }
+    .nav__links a:hover { color: var(--white); text-decoration: none; }
+    .nav__links a.active { color: var(--white); border-bottom: 1.5px solid var(--red); }
+
+    /* === Page hero === */
+    .page-hero {
+      background: linear-gradient(135deg, #4A6595 0%, #3D5A80 45%, #2C4A6E 100%);
+      color: var(--white);
+      padding: 60px 0 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath d='M17 3 L31 17 L17 31 L3 17 Z' fill='none' stroke='%23ffffff' stroke-width='0.6' stroke-opacity='0.18'/%3E%3C/svg%3E");
+      background-size: 34px 34px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .page-hero__eyebrow {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(219,234,254,0.95);
+      margin-bottom: 12px;
+    }
+    .page-hero__title {
+      font-size: 52px;
+      font-weight: 400;
+      margin: 0 0 14px;
+      line-height: 1.1;
+      font-style: italic;
+    }
+    .page-hero__subtitle {
+      color: rgba(219,234,254,0.95);
+      font-size: 17px;
+      margin: 0 0 22px;
+      max-width: 640px;
+      line-height: 1.6;
+    }
+    .page-hero__quick {
+      display: flex;
+      gap: 22px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+    }
+    .page-hero__quick a {
+      color: rgba(219,234,254,0.85);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid rgba(219,234,254,0.3);
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .page-hero__quick a:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    /* === Section === */
+    .section { padding: 70px 0; }
+    .section--gray { background: var(--soft-bg); }
+
+    /* === Category header === */
+    .category-header {
+      border-bottom: 2px solid var(--light-blue);
+      padding-bottom: 14px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .category-header__title {
+      font-size: 32px;
+      font-style: italic;
+      color: var(--navy-darker);
+      margin: 0;
+      font-weight: 400;
+    }
+    .category-header__count {
+      color: var(--red);
+      font-size: 12px;
+      font-family: var(--font-sans);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* === Project detail entry === */
+    .project-detail {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--light-blue);
+      scroll-margin-top: 80px;
+      transition: background 0.4s;
+    }
+    .project-detail:last-child { border-bottom: none; }
+    .project-detail:target {
+      background: linear-gradient(90deg, rgba(220,47,60,0.05) 0%, transparent 70%);
+      border-left: 4px solid var(--red);
+      padding-left: 24px;
+      margin-left: -28px;
+      animation: highlight-fade 1.4s ease-out;
+    }
+    @keyframes highlight-fade {
+      0% { background-color: rgba(220,47,60,0.14); }
+      100% { background-color: rgba(220,47,60,0.05); }
+    }
+    .project-detail__period {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .project-detail__title {
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--navy-darker);
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+    .project-detail__tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .tag--engineering { background: var(--light-blue); color: var(--navy-darker); }
+    .tag--ai { background: rgba(220,47,60,0.1); color: var(--red); }
+    .tag--current { background: rgba(220,47,60,0.1); color: var(--red); }
+    .tag--research { background: #FEF3C7; color: #92400E; }
+    .tag--published { background: #DCFCE7; color: #166534; }
+    .tag--masters { background: #E0E7FF; color: #3730A3; }
+    .project-detail__description {
+      font-size: 16px;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin: 0 0 18px;
+    }
+    .project-detail__description + .project-detail__description { margin-top: -10px; }
+    .project-detail__tools {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      align-items: center;
+    }
+    .project-detail__tools-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-right: 4px;
+      font-weight: 500;
+    }
+    .tool-chip {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      padding: 4px 10px;
+      background: var(--soft-bg);
+      color: var(--navy-darker);
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+      border: 1px solid var(--light-blue);
+      font-weight: 500;
+    }
+
+    /* === Back to top === */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      z-index: 100;
+      text-decoration: none;
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      background: var(--navy-darker);
+      text-decoration: none;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .back-to-top svg { width: 18px; height: 18px; }
+
+    /* === Footer === */
+    .footer {
+      background: linear-gradient(135deg, #2C4A6E 0%, #1E3A5F 50%, #15294A 100%);
+      color: var(--white);
+      padding: 60px 0 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    .footer .container { position: relative; z-index: 1; }
+    .footer__title {
+      font-size: 32px;
+      font-weight: 400;
+      font-style: italic;
+      margin: 0 0 8px;
+      color: var(--white);
+    }
+    .footer__subtitle {
+      color: rgba(219,234,254,0.85);
+      font-size: 15px;
+      margin: 0 0 24px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: var(--red-hover); text-decoration: none; color: var(--white); }
+    .btn svg { width: 16px; height: 16px; }
+    .footer__links {
+      display: flex; gap: 30px; justify-content: center; margin-top: 28px;
+      font-family: var(--font-sans); font-size: 13px; flex-wrap: wrap;
+    }
+    .footer__links a {
+      color: rgba(219,234,254,0.85); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .footer__links a:hover { color: var(--white); text-decoration: none; }
+    .footer__links svg { width: 16px; height: 16px; }
+    .footer__copyright { font-family: var(--font-sans); font-size: 12px; color: rgba(219,234,254,0.5); margin-top: 28px; }
+
+    /* === Mobile === */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav__links { display: none; }
+      .page-hero { padding: 44px 0 36px; }
+      .page-hero__title { font-size: 38px; }
+      .page-hero__quick { flex-wrap: wrap; gap: 10px; }
+      .section { padding: 50px 0; }
+      .project-detail { padding: 26px 0; }
+      .project-detail__title { font-size: 23px; }
+      .project-detail__description { font-size: 15px; }
+      .category-header__title { font-size: 26px; }
+      .footer__title { font-size: 26px; }
+      .back-to-top { bottom: 18px; right: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Diamond-pattern decorative top band -->
+  <div class="top-band" aria-hidden="true"></div>
+
+  <!-- ========== Header ========== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Main">
+        <a href="index.html" class="nav__brand">Priya Sakthi</a>
+        <ul class="nav__links">
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="mailto:priyasakthi1997@gmail.com">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Page hero ========== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__eyebrow">— Portfolio —</div>
+      <h1 class="page-hero__title">Projects</h1>
+      <p class="page-hero__subtitle">Fifteen projects spanning renewable energy systems, mechanical engineering research, and AI training infrastructure — from feasibility studies for remote communities to rubric design for frontier AI models.</p>
+      <div class="page-hero__quick">
+        <a href="#engineering">Engineering (8)</a>
+        <a href="#ai">AI (7)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ENGINEERING ========== -->
+  <section class="section" id="engineering">
+    <div class="container">
+
+      <div class="category-header">
+        <h2 class="category-header__title">Engineering</h2>
+        <span class="category-header__count">8 Projects</span>
+      </div>
+
+      <!-- 1. Geothermal Hybrid -->
+      <article class="project-detail" id="geothermal-hybrid">
+        <div class="project-detail__period">2023 – Ongoing</div>
+        <h3 class="project-detail__title">Geothermal Hybrid Model for Diesel Replacement</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--engineering">Engineering</span>
+          <span class="tag tag--current">Current</span>
+        </div>
+        <p class="project-detail__description">Active research designing a geothermal + renewable hybrid energy system as a sustainable alternative to diesel generation in remote Newfoundland and Labrador communities. The work combines low-enthalpy geothermal sources with solar PV, wind, and battery storage to deliver community-scale, weather-resilient power.</p>
+        <p class="project-detail__description">Focus areas include techno-economic feasibility, lifecycle cost analysis, and configuration optimization under realistic load profiles. The goal is to reduce dependency on costly diesel fuel transport, lower lifecycle emissions, and improve energy resilience for Indigenous and rural NL communities currently reliant on diesel generators.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">HOMER Pro</span>
+          <span class="tool-chip">MATLAB</span>
+          <span class="tool-chip">PLEXOS</span>
+        </div>
+      </article>
+
+      <!-- 2. Pre-Feasibility Hydrogen NL -->
+      <article class="project-detail" id="hydrogen-prefeasibility-nl">
+        <div class="project-detail__period">Jun 2023 – Ongoing · Memorial University</div>
+        <h3 class="project-detail__title">Pre-Feasibility Hydrogen Production, Storage &amp; Distribution for NL</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--engineering">Engineering</span>
+          <span class="tag tag--research">Research</span>
+        </div>
+        <p class="project-detail__description">Comprehensive pre-feasibility study assessing hydrogen production, storage, and distribution potential across Newfoundland and Labrador. Evaluates scalable, sustainable pathways aligned with provincial energy goals and Canada's wider hydrogen export ambitions.</p>
+        <p class="project-detail__description">Scope covers source-to-application supply chain modelling, electrolysis technology selection, storage method comparison (compressed gas, liquid hydrogen, ammonia), and economic viability under multiple cost and demand scenarios. Findings inform investment and policy direction for the province's hydrogen economy.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">HOMER Pro</span>
+          <span class="tool-chip">PLEXOS</span>
+          <span class="tool-chip">Excel</span>
+        </div>
+      </article>
+
+      <!-- 3. Hydrogen Production System Modelling -->
+      <article class="project-detail" id="hydrogen-production-modelling">
+        <div class="project-detail__period">Memorial University</div>
+        <h3 class="project-detail__title">Hydrogen Production System Modelling</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--engineering">Engineering</span>
+          <span class="tag tag--research">Research</span>
+        </div>
+        <p class="project-detail__description">Computational research and PLEXOS-based modelling of hydrogen production systems, with applied analysis on the Canada-to-Germany supply chain pathway. Examines production technology options, transport modes, and conversion considerations along the supply chain.</p>
+        <p class="project-detail__description">Model captures end-to-end production economics, energy carrier choices (liquid H₂ vs. ammonia vs. methanol), and capacity-to-demand matching. Supports strategic decisions for international green hydrogen export from Canadian renewables to European markets.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">PLEXOS</span>
+          <span class="tool-chip">Excel</span>
+          <span class="tool-chip">MATLAB</span>
+        </div>
+      </article>
+
+      <!-- 4. Microgrid Projects for NL Communities -->
+      <article class="project-detail" id="microgrid-nl">
+        <div class="project-detail__period">Jun 2023 – Ongoing · Memorial University</div>
+        <h3 class="project-detail__title">Microgrid Projects for Local Communities in Newfoundland and Labrador</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--engineering">Engineering</span>
+          <span class="tag tag--research">Research</span>
+        </div>
+        <p class="project-detail__description">Leading the development and optimization of microgrid systems combining wind, solar, and hydropower to provide sustainable energy solutions for local NL communities — including hybrid renewable energy analysis for Nain, Hopedale, and Natuashish.</p>
+        <p class="project-detail__description">Each community-specific configuration involves load profile analysis, system sizing, dispatch optimization, and 20+ year lifecycle planning. The goal is reliable, locally appropriate renewable systems that displace high-cost, high-emission diesel generation while accounting for unique geographic and climate constraints of each location.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">HOMER Pro</span>
+          <span class="tool-chip">PLEXOS</span>
+        </div>
+      </article>
+
+      <!-- 5. Tidal Turbine CFD -->
+      <article class="project-detail" id="tidal-turbine-cfd">
+        <div class="project-detail__period">Oct 2022 – May 2023 · Master's Thesis</div>
+        <h3 class="project-detail__title">Numerical Study of Turbulent Flow Around Submerged Tidal Turbine Foundations</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--engineering">Engineering</span>
+          <span class="tag tag--masters">Master's</span>
+        </div>
+        <p class="project-detail__description">Computational fluid dynamics analysis of hydrodynamic forces on submerged tidal turbine foundations. Used ANSYS Fluent to model turbulent flow patterns, vortex shedding, and structural loading under varied current conditions.</p>
+        <p class="project-detail__description">Outcomes informed optimized foundation designs that enhance turbine efficiency, reduce sediment scour, and lower fatigue risks. The work contributes to safer, more efficient tidal energy deployment in coastal environments.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">ANSYS Fluent</span>
+          <span class="tool-chip">CFD</span>
+          <span class="tool-chip">MATLAB</span>
+        </div>
+      </article>
+
+      <!-- 6. Solar Grid-Tied Residential -->
+      <article class="project-detail" id="solar-residential-nl">
+        <div class="project-detail__period">Jul – Oct 2022 · Master's</div>
+        <h3 class="project-detail__title">Design of a Solar Grid-Tied System for Residential Use in NL</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--engineering">Engineering</span>
+          <span class="tag tag--masters">Master's</span>
+        </div>
+        <p class="project-detail__description">Developed and implemented a solar grid-tied PV system for residential application in Newfoundland and Labrador. Used PVsyst for system sizing, performance simulation, and shading analysis tailored to NL's high-latitude solar profile.</p>
+        <p class="project-detail__description">The final design delivers measurable reduction in residential carbon footprint and significant long-term cost savings under NL's electricity pricing structure, while accounting for snow load, panel tilt optimization, and net-metering integration.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">PVsyst</span>
+          <span class="tool-chip">AutoCAD</span>
+        </div>
+      </article>
+
+      <!-- 7. Hybrid Microgrid West Kelowna -->
+      <article class="project-detail" id="microgrid-kelowna">
+        <div class="project-detail__period">Jun – Sep 2022 · Master's</div>
+        <h3 class="project-detail__title">Optimization of Hybrid Microgrid System in West Kelowna</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--engineering">Engineering</span>
+          <span class="tag tag--masters">Master's</span>
+        </div>
+        <p class="project-detail__description">Techno-economic optimization of a hybrid microgrid for a small-scale community in West Kelowna, British Columbia. Compared multiple configurations of solar PV, wind, battery storage, and grid-connected backup.</p>
+        <p class="project-detail__description">Achieved a cost-efficient, reliable, and eco-friendly 20-year energy supply with sensitivity analysis on equipment cost, fuel price, and load growth. Final design balances LCOE, NPC, and emissions targets for sustainable community-scale energy.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">HOMER Pro</span>
+          <span class="tool-chip">Excel</span>
+        </div>
+      </article>
+
+      <!-- 8. Industrial Food Hopper -->
+      <article class="project-detail" id="industrial-hopper">
+        <div class="project-detail__period">Jun 2019 – May 2020 · Lassol Private Limited, Coimbatore</div>
+        <h3 class="project-detail__title">Design of an Industrial Hopper for the Restaurant Industry</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--engineering">Engineering</span>
+        </div>
+        <p class="project-detail__description">Developed a high-capacity industrial food hopper for the restaurant industry in Coimbatore, India. Designed in SolidWorks to meet stringent food safety standards, reduce food waste during processing, and enhance kitchen productivity.</p>
+        <p class="project-detail__description">Work included material selection, finite element stress analysis, and manufacturing tolerance specification to ensure the unit performed reliably under continuous commercial use.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">SolidWorks</span>
+          <span class="tool-chip">FEA</span>
+          <span class="tool-chip">AutoCAD</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========== AI ========== -->
+  <section class="section section--gray" id="ai">
+    <div class="container">
+
+      <div class="category-header">
+        <h2 class="category-header__title">AI</h2>
+        <span class="category-header__count">7 Projects</span>
+      </div>
+
+      <!-- 1. AI Training Rubrics for Mechanical Engineering -->
+      <article class="project-detail" id="ai-rubrics-mech-eng">
+        <div class="project-detail__period">Python · JSON Rubric Schemas</div>
+        <h3 class="project-detail__title">AI Training Rubrics for Mechanical Engineering</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--ai">AI</span>
+        </div>
+        <p class="project-detail__description">Designed reference plans and JSON-based grading rubrics that train and evaluate AI coding agents on mechanical engineering software tasks. Wrote planning statements that mirror real senior-engineer requests, authored ideal reference plans, and built two paired rubrics per task: a planning rubric (grading plan quality) and an execution rubric (grading the final code).</p>
+        <p class="project-detail__description">Every criterion was written to be objective, self-contained, and grounded in repository conventions — avoiding vague language and stacked checks. Rubrics were calibrated for a sub-60% frontier-model pass rate, then cross-validated for alignment between the planning statement, golden plan, golden patch, and both rubrics.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">JSON</span>
+          <span class="tool-chip">Cursor</span>
+          <span class="tool-chip">Git/GitHub</span>
+        </div>
+      </article>
+
+      <!-- 2. Codebase Exploration & Repo Reasoning Tasks -->
+      <article class="project-detail" id="repo-reasoning-tasks">
+        <div class="project-detail__period">Python · Agentic Tools</div>
+        <h3 class="project-detail__title">Codebase &amp; Repo Reasoning Tasks</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--ai">AI</span>
+        </div>
+        <p class="project-detail__description">Built Python-based AI training tasks focused on codebase reasoning and exploration. Tasks teach AI agents to navigate, understand, and extract information from real software repositories — replicating the kind of investigation an onboarding engineer would do on day one.</p>
+        <p class="project-detail__description">Each task includes deterministic verifiers, structured expected outcomes, and rubrics for grading agent behavior across exploration depth and reasoning quality.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">pytest</span>
+          <span class="tool-chip">Agentic coding tools</span>
+        </div>
+      </article>
+
+      <!-- 3. Scientific Coding Benchmark -->
+      <article class="project-detail" id="sci-coding-benchmark">
+        <div class="project-detail__period">Python · Multi-step Benchmark</div>
+        <h3 class="project-detail__title">Multi-Step Scientific Coding Benchmark</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--ai">AI</span>
+        </div>
+        <p class="project-detail__description">Built multi-step Python coding tasks for an open-source benchmark used to evaluate frontier AI models on real research-paper-derived problems. Each task is derived from a recent research paper introducing a novel computational method, decomposed into 6–10 unit-testable subproblems, and implemented in clean, self-contained Python.</p>
+        <p class="project-detail__description">Work involved sourcing papers with novel algorithms, decomposing methods into incremental Python steps, writing strict unit tests with calibrated floating-point tolerances, and ensuring reproducibility. Tasks were calibrated to be genuinely challenging — most frontier models solve under 10%.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">pytest</span>
+          <span class="tool-chip">Docker</span>
+          <span class="tool-chip">GitHub PR workflow</span>
+        </div>
+      </article>
+
+      <!-- 4. Scientific Coding Benchmark — Extended -->
+      <article class="project-detail" id="sci-coding-extended">
+        <div class="project-detail__period">Python · Extended Contributions</div>
+        <h3 class="project-detail__title">Scientific Coding Benchmark — Extended Work</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--ai">AI</span>
+        </div>
+        <p class="project-detail__description">Continued contributions to the scientific coding benchmark with additional Python-based multi-step tasks. Focused on numerical methods, scientific algorithms, and reproducible implementations.</p>
+        <p class="project-detail__description">Strict unit tests with calibrated floating-point tolerances and fully Dockerized environments ensure reproducibility across machines and reviewers.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">pytest</span>
+          <span class="tool-chip">Docker</span>
+        </div>
+      </article>
+
+      <!-- 5. Rubric Writing for AI Coding Tasks -->
+      <article class="project-detail" id="rubric-writing-review">
+        <div class="project-detail__period">Review · Rubric Design</div>
+        <h3 class="project-detail__title">Rubric Writing for AI Coding Tasks</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--ai">AI</span>
+        </div>
+        <p class="project-detail__description">Analyzed existing Python-based AI coding tasks written by other contributors and authored planning and execution rubrics. The role focused exclusively on rubric design — reading task specifications and solutions, then writing objective grading criteria across functional, robustness, and style dimensions.</p>
+        <p class="project-detail__description">Rubrics were calibrated to challenge frontier models and validated for alignment with task requirements and reference solutions.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">JSON</span>
+          <span class="tool-chip">Code review</span>
+        </div>
+      </article>
+
+      <!-- 6. Codebase Exploration RL Environment -->
+      <article class="project-detail" id="codebase-exploration-rl">
+        <div class="project-detail__period">Writer · Whole-Task Authoring</div>
+        <h3 class="project-detail__title">Codebase Exploration RL Environment</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--ai">AI</span>
+        </div>
+        <p class="project-detail__description">Designed and built RL training tasks for an environment that teaches AI agents to explore and reason about unfamiliar open-source software repositories — the kind of high-level engineering questions an onboarding engineer would ask their tech lead.</p>
+        <p class="project-detail__description">Each task posed a non-trivial natural-language question about a real open-source repo, paired with a deterministic pytest verifier over the agent's exploration trajectory and an LLM-as-Judge rubric for grading the final answer. Produced golden trajectories by solving each question manually using agentic coding tools.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">pytest</span>
+          <span class="tool-chip">OpenCode</span>
+          <span class="tool-chip">LLM-as-Judge</span>
+        </div>
+      </article>
+
+      <!-- 7. Behavioral Failure Mode Benchmark -->
+      <article class="project-detail" id="behavioral-benchmark">
+        <div class="project-detail__period">Writer · Reviewer · Super Reviewer</div>
+        <h3 class="project-detail__title">Behavioral Failure Mode Benchmark for AI Coding Agents</h3>
+        <div class="project-detail__tags">
+          <span class="tag tag--ai">AI</span>
+        </div>
+        <p class="project-detail__description">Contributed to a 500-task benchmark designed to systematically measure behavioral failure modes in AI coding agents — cases where a model has the capability to solve a task but doesn't reliably do so. Built and reviewed Dockerized tasks targeting specific failure modes: poor time management, analysis paralysis, wrong tool selection, insufficient verification, and perseveration.</p>
+        <p class="project-detail__description">Each task included a deterministic golden solution and verification tests. Served as writer, reviewer, and super reviewer — calibrating difficulty, auditing across 11 quality dimensions, and resolving issues with direct PRs.</p>
+        <div class="project-detail__tools">
+          <span class="project-detail__tools-label">Tools:</span>
+          <span class="tool-chip">Docker</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">pytest</span>
+          <span class="tool-chip">Code review</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <h2 class="footer__title">Got a project in mind?</h2>
+      <p class="footer__subtitle">Available for engineering consulting and AI work.</p>
+      <a href="mailto:priyasakthi1997@gmail.com" class="btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        priyasakthi1997@gmail.com
+      </a>
+
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/priya-sakthi/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/priyasakthi1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="https://scholar.google.com/citations?user=cS_CgbUAAAAJ&hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Google Scholar
+        </a>
+      </div>
+
+      <div class="footer__copyright">© 2026 Priya Sakthi · St. John's, NL, Canada</div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </a>
+
+  <script>
+    // Back to top button visibility
+    (function() {
+      var btn = document.querySelector('.back-to-top');
+      if (!btn) return;
+      function toggleBtn() {
+        if (window.scrollY > 600) btn.classList.add('visible');
+        else btn.classList.remove('visible');
+      }
+      window.addEventListener('scroll', toggleBtn, { passive: true });
+      toggleBtn();
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+</body>
+</html>
