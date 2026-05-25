@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications — Priya Sakthi</title>
+  <meta name="description" content="Peer-reviewed publications by Priya Sakthi on hydrogen energy systems, Canadian supply chains, and renewable energy in Newfoundland and Labrador.">
+  <meta name="author" content="Priya Sakthi">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233D5A80'/%3E%3Ctext x='16' y='23' font-family='Times New Roman, serif' font-size='22' fill='%23DC2F3C' text-anchor='middle' font-style='italic' font-weight='500'%3EP%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --navy: #3D5A80;
+      --navy-dark: #2C4A6E;
+      --navy-darker: #1E3A5F;
+      --light-blue: #DBEAFE;
+      --light-blue-soft: #EBF2FB;
+      --soft-bg: #F8FAFC;
+      --red: #DC2F3C;
+      --red-hover: #B82430;
+      --red-soft: #FF6B7A;
+      --white: #FFFFFF;
+      --text-dark: #1E3A5F;
+      --text-body: #475569;
+      --text-muted: #64748B;
+      --border: #DBEAFE;
+      --font-serif: 'Times New Roman', Georgia, 'Liberation Serif', serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --max-width: 1100px;
+      --radius: 6px;
+      --radius-sm: 4px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; font-family: var(--font-serif); color: var(--text-dark); line-height: 1.5; background: var(--white); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 28px; }
+
+    .top-band {
+      height: 36px;
+      background-color: #15294A;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 2 L22 12 L12 22 L2 12 Z' fill='none' stroke='%23ffffff' stroke-width='0.6' stroke-opacity='0.22'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #1E3A5F 0%, #15294A 100%);
+      background-size: 24px 24px, cover;
+      background-repeat: repeat, no-repeat;
+    }
+
+    .site-header {
+      background: linear-gradient(180deg, #15294A 0%, #1E3A5F 100%); box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      padding: 16px 0;
+      box-shadow: 0 2px 12px rgba(30,58,95,0.15);
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .nav__brand { color: var(--white); font-size: 22px; font-weight: 500; text-decoration: none; }
+    .nav__brand:hover { color: var(--white); text-decoration: none; }
+    .nav__links { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-family: var(--font-sans); font-size: 14px; }
+    .nav__links a { color: rgba(255,255,255,0.85); text-decoration: none; padding-bottom: 3px; }
+    .nav__links a:hover { color: var(--white); text-decoration: none; }
+    .nav__links a.active { color: var(--white); border-bottom: 1.5px solid var(--red); }
+
+    .page-hero {
+      background: linear-gradient(135deg, #4A6595 0%, #3D5A80 45%, #2C4A6E 100%);
+      color: var(--white);
+      padding: 60px 0 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath d='M17 3 L31 17 L17 31 L3 17 Z' fill='none' stroke='%23ffffff' stroke-width='0.6' stroke-opacity='0.18'/%3E%3C/svg%3E");
+      background-size: 34px 34px;
+      opacity: 0.5;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .page-hero__eyebrow {
+      font-family: var(--font-sans); font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(219,234,254,0.95); margin-bottom: 12px;
+    }
+    .page-hero__title { font-size: 52px; font-weight: 400; margin: 0 0 14px; line-height: 1.1; font-style: italic; }
+    .page-hero__subtitle { color: rgba(219,234,254,0.95); font-size: 17px; margin: 0; max-width: 640px; line-height: 1.6; }
+
+    .section { padding: 70px 0; }
+
+    .pub {
+      display: flex;
+      gap: 26px;
+      padding: 30px 0;
+      border-top: 1px solid var(--light-blue);
+    }
+    .pub:last-of-type { border-bottom: 1px solid var(--light-blue); }
+    .pub__year-block {
+      flex-shrink: 0;
+      width: 88px;
+      text-align: center;
+    }
+    .pub__year-label {
+      background: var(--light-blue);
+      color: var(--navy-darker);
+      padding: 12px 6px;
+      border-radius: var(--radius-sm);
+      font-size: 22px;
+      font-weight: 500;
+      display: block;
+    }
+    .pub__num {
+      font-family: var(--font-sans); font-size: 11px; color: var(--text-muted);
+      margin-top: 6px; text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .pub__body { flex: 1; min-width: 0; }
+    .pub__title {
+      font-size: 22px; font-weight: 500; color: var(--navy-darker);
+      line-height: 1.35; margin: 0 0 10px;
+    }
+    .pub__authors { font-size: 15px; color: var(--text-body); margin: 0 0 8px; line-height: 1.6; }
+    .pub__authors .self { color: var(--red); font-weight: 500; }
+    .pub__venue {
+      font-family: var(--font-sans); font-size: 12px; color: var(--text-muted);
+      font-style: italic; margin: 0 0 12px;
+    }
+    .pub__abstract {
+      font-size: 15px; color: var(--text-body); line-height: 1.7; margin: 12px 0 14px;
+    }
+    .pub__keywords {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;
+    }
+    .keyword {
+      font-family: var(--font-sans); font-size: 11px; padding: 3px 9px;
+      background: var(--soft-bg); color: var(--navy-darker);
+      border: 1px solid var(--light-blue); border-radius: 3px;
+    }
+    .pub__link {
+      font-family: var(--font-sans); font-size: 13px; color: var(--red); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px; font-weight: 500;
+    }
+    .pub__link:hover { text-decoration: underline; }
+    .pub__link svg { width: 13px; height: 13px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px;
+      background: var(--red); color: var(--white); text-decoration: none;
+      border-radius: var(--radius-sm); font-family: var(--font-sans);
+      font-size: 14px; font-weight: 500; transition: background 0.15s;
+    }
+    .btn:hover { background: var(--red-hover); text-decoration: none; color: var(--white); }
+    .btn svg { width: 16px; height: 16px; }
+    .btn--outline {
+      background: transparent; color: var(--white);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .btn--outline:hover { background: rgba(255,255,255,0.1); }
+
+    .scholar-cta {
+      text-align: center; margin-top: 50px;
+      padding: 32px; background: var(--light-blue-soft);
+      border-radius: var(--radius); border: 1px solid var(--light-blue);
+    }
+    .scholar-cta h3 {
+      font-size: 22px; font-weight: 400; color: var(--navy-darker);
+      margin: 0 0 8px; font-style: italic;
+    }
+    .scholar-cta p {
+      color: var(--text-body); margin: 0 0 18px; font-size: 14px;
+    }
+    .scholar-cta .btn {
+      background: var(--navy-darker); color: var(--white);
+    }
+    .scholar-cta .btn:hover { background: var(--navy); }
+
+    .footer {
+      background: linear-gradient(135deg, #2C4A6E 0%, #1E3A5F 50%, #15294A 100%);
+      color: var(--white); padding: 60px 0 36px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .footer__title { font-size: 32px; font-weight: 400; font-style: italic; margin: 0 0 8px; color: var(--white); }
+    .footer__subtitle { color: rgba(219,234,254,0.85); font-size: 15px; margin: 0 0 24px; }
+    .footer__links {
+      display: flex; gap: 30px; justify-content: center; margin-top: 28px;
+      font-family: var(--font-sans); font-size: 13px; flex-wrap: wrap;
+    }
+    .footer__links a {
+      color: rgba(219,234,254,0.85); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .footer__links a:hover { color: var(--white); text-decoration: none; }
+    .footer__links svg { width: 16px; height: 16px; }
+    .footer__copyright { font-family: var(--font-sans); font-size: 12px; color: rgba(219,234,254,0.5); margin-top: 28px; }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav__links { display: none; }
+      .page-hero { padding: 44px 0 36px; }
+      .page-hero__title { font-size: 38px; }
+      .section { padding: 50px 0; }
+      .pub { gap: 16px; padding: 24px 0; }
+      .pub__year-block { width: 68px; }
+      .pub__year-label { font-size: 17px; }
+      .pub__title { font-size: 18px; }
+      .pub__abstract { font-size: 14px; }
+      .footer__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-band" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Main">
+        <a href="index.html" class="nav__brand">Priya Sakthi</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html" class="active">Publications</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mailto:priyasakthi1997@gmail.com">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__eyebrow">— Peer-Reviewed Research —</div>
+      <h1 class="page-hero__title">Publications</h1>
+      <p class="page-hero__subtitle">Three peer-reviewed papers (2024) on sustainable hydrogen production, storage, and distribution — with a focus on Canadian supply chains and the energy transition in Newfoundland and Labrador.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <article class="pub">
+        <div class="pub__year-block">
+          <span class="pub__year-label">2024</span>
+          <div class="pub__num">Paper 01</div>
+        </div>
+        <div class="pub__body">
+          <h2 class="pub__title">Sustainable Hydrogen Production, Storage, and Distribution: A Systematic Review for Newfoundland and Labrador</h2>
+          <p class="pub__authors"><span class="self">Sakthi, P.</span>, Ghahremanlou, D., &amp; Lardi, A.</p>
+          <p class="pub__venue">Journal of Sustainable Development · Vol. 17, No. 1 · pp. 1–20 · 2024</p>
+          <p class="pub__abstract">A systematic review of sustainable hydrogen production, storage, and distribution pathways tailored to the Newfoundland and Labrador context. The paper synthesizes the current state of green hydrogen technologies, evaluates regional renewable resource potential, and identifies the technical and economic barriers to large-scale H₂ adoption in the province.</p>
+          <div class="pub__keywords">
+            <span class="keyword">Hydrogen</span>
+            <span class="keyword">Renewable energy</span>
+            <span class="keyword">Newfoundland and Labrador</span>
+            <span class="keyword">Sustainability</span>
+            <span class="keyword">Systematic review</span>
+          </div>
+          <a href="https://doi.org/10.5539/jsd.v17n1p1" class="pub__link" target="_blank" rel="noopener">
+            doi.org/10.5539/jsd.v17n1p1
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub__year-block">
+          <span class="pub__year-label">2024</span>
+          <div class="pub__num">Paper 02</div>
+        </div>
+        <div class="pub__body">
+          <h2 class="pub__title">A Comprehensive Systematic Overview of Canadian Hydrogen Supply Chains Downstream</h2>
+          <p class="pub__authors">Farahmand, F., King, J., Ghahremanlou, D., <span class="self">Sakthi, P.</span>, &amp; Jafari, M. R. M.</p>
+          <p class="pub__venue">Journal of Sustainable Development · Vol. 17, No. 2 · pp. 1–15 · 2024</p>
+          <p class="pub__abstract">A comprehensive review of downstream hydrogen supply chain activities in Canada, covering transport, storage, conversion, and end-use sectors. The paper maps current infrastructure, evaluates emerging technologies, and discusses policy and investment levers needed to scale Canadian hydrogen exports and domestic consumption.</p>
+          <div class="pub__keywords">
+            <span class="keyword">Hydrogen supply chain</span>
+            <span class="keyword">Canada</span>
+            <span class="keyword">Downstream</span>
+            <span class="keyword">Energy transition</span>
+            <span class="keyword">Policy</span>
+          </div>
+          <a href="https://doi.org/10.5539/jsd.v17n2p1" class="pub__link" target="_blank" rel="noopener">
+            doi.org/10.5539/jsd.v17n2p1
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub__year-block">
+          <span class="pub__year-label">2024</span>
+          <div class="pub__num">Paper 03</div>
+        </div>
+        <div class="pub__body">
+          <h2 class="pub__title">A Systematic Review and Bibliometric Analysis of Sustainable Hydrogen Production and Distribution in Canada</h2>
+          <p class="pub__authors"><span class="self">Sakthi, P.</span>, &amp; Ghahremanlou, D.</p>
+          <p class="pub__venue">Journal of Green Economy and Low-Carbon Development · Vol. 3, No. 3 · pp. 132–160 · 2024</p>
+          <p class="pub__abstract">A combined systematic review and bibliometric analysis mapping the research landscape of sustainable hydrogen production and distribution in Canada. Identifies research clusters, dominant authors and institutions, and emerging themes — providing a roadmap for future research and a snapshot of where Canadian hydrogen scholarship currently stands.</p>
+          <div class="pub__keywords">
+            <span class="keyword">Bibliometric analysis</span>
+            <span class="keyword">Hydrogen production</span>
+            <span class="keyword">Canada</span>
+            <span class="keyword">Research mapping</span>
+            <span class="keyword">Low-carbon</span>
+          </div>
+          <a href="https://doi.org/10.56578/jgelcd030301" class="pub__link" target="_blank" rel="noopener">
+            doi.org/10.56578/jgelcd030301
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <div class="scholar-cta">
+        <h3>Find all publications and citations on Google Scholar</h3>
+        <p>For citation counts, full bibliographic data, and any newer work, visit my Scholar profile.</p>
+        <a href="https://scholar.google.com/citations?user=cS_CgbUAAAAJ&hl=en" class="btn" target="_blank" rel="noopener">
+          Open Google Scholar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <h2 class="footer__title">Got a project in mind?</h2>
+      <p class="footer__subtitle">Available for engineering consulting and AI work.</p>
+      <a href="mailto:priyasakthi1997@gmail.com" class="btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        priyasakthi1997@gmail.com
+      </a>
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/priya-sakthi/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/priyasakthi1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="https://scholar.google.com/citations?user=cS_CgbUAAAAJ&hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Google Scholar
+        </a>
+      </div>
+      <div class="footer__copyright">© 2026 Priya Sakthi · St. John's, NL, Canada</div>
+    </div>
+  </footer>
+
+</body>
+</html>
