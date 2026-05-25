@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Priya Sakthi</title>
+  <meta name="description" content="About Priya Sakthi — engineer at the intersection of energy systems and AI, currently based in St. John's, Newfoundland.">
+  <meta name="author" content="Priya Sakthi">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233D5A80'/%3E%3Ctext x='16' y='23' font-family='Times New Roman, serif' font-size='22' fill='%23DC2F3C' text-anchor='middle' font-style='italic' font-weight='500'%3EP%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --navy: #3D5A80; --navy-dark: #2C4A6E; --navy-darker: #1E3A5F;
+      --light-blue: #DBEAFE; --light-blue-soft: #EBF2FB; --soft-bg: #F8FAFC;
+      --red: #DC2F3C; --red-hover: #B82430; --red-soft: #FF6B7A; --white: #FFFFFF;
+      --text-dark: #1E3A5F; --text-body: #475569; --text-muted: #64748B;
+      --border: #DBEAFE;
+      --font-serif: 'Times New Roman', Georgia, 'Liberation Serif', serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --max-width: 1100px; --radius: 6px; --radius-sm: 4px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; font-family: var(--font-serif); color: var(--text-dark); line-height: 1.5; background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 28px; }
+
+    .top-band {
+      height: 36px;
+      background-color: #15294A;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 2 L22 12 L12 22 L2 12 Z' fill='none' stroke='%23ffffff' stroke-width='0.6' stroke-opacity='0.22'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #1E3A5F 0%, #15294A 100%);
+      background-size: 24px 24px, cover;
+      background-repeat: repeat, no-repeat;
+    }
+
+    .site-header {
+      background: linear-gradient(180deg, #15294A 0%, #1E3A5F 100%);
+      padding: 16px 0;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .nav__brand { color: var(--white); font-size: 22px; font-weight: 500; text-decoration: none; }
+    .nav__brand:hover { color: var(--white); text-decoration: none; }
+    .nav__links { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-family: var(--font-sans); font-size: 14px; }
+    .nav__links a { color: rgba(255,255,255,0.85); text-decoration: none; padding-bottom: 3px; }
+    .nav__links a:hover { color: var(--white); text-decoration: none; }
+    .nav__links a.active { color: var(--white); border-bottom: 1.5px solid var(--red); }
+
+    .page-hero {
+      background: linear-gradient(135deg, #4A6595 0%, #3D5A80 45%, #2C4A6E 100%);
+      color: var(--white);
+      padding: 60px 0 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath d='M17 3 L31 17 L17 31 L3 17 Z' fill='none' stroke='%23ffffff' stroke-width='0.6' stroke-opacity='0.18'/%3E%3C/svg%3E");
+      background-size: 34px 34px; opacity: 0.5;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .page-hero__eyebrow {
+      font-family: var(--font-sans); font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(219,234,254,0.95); margin-bottom: 12px;
+    }
+    .page-hero__title { font-size: 52px; font-weight: 400; margin: 0 0 14px; line-height: 1.1; font-style: italic; }
+    .page-hero__subtitle { color: rgba(219,234,254,0.95); font-size: 17px; margin: 0; max-width: 640px; line-height: 1.6; }
+
+    .section { padding: 70px 0; }
+    .section--gray { background: var(--soft-bg); }
+
+    /* Intro section with photo */
+    .intro {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .intro__photo {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 5px solid #B4D4F5;
+      object-fit: cover;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(180,212,245,0.4);
+    }
+    .intro__body p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin: 0 0 18px;
+    }
+    .intro__body p:first-child::first-letter {
+      font-size: 56px;
+      float: left;
+      line-height: 1;
+      padding: 4px 10px 0 0;
+      color: var(--red);
+      font-style: italic;
+      font-weight: 500;
+    }
+    .intro__body strong {
+      color: var(--navy-darker);
+      font-weight: 500;
+    }
+
+    .section__intro {
+      text-align: center; margin-bottom: 40px;
+    }
+    .section__eyebrow {
+      font-family: var(--font-sans); color: var(--red); font-size: 12px;
+      letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .section__title {
+      font-size: 36px; font-weight: 400; color: var(--navy-darker);
+      margin: 0; font-style: italic;
+    }
+
+    /* Education timeline */
+    .timeline {
+      max-width: 720px; margin: 0 auto;
+    }
+    .timeline__item {
+      display: grid;
+      grid-template-columns: 100px 24px 1fr;
+      gap: 24px;
+      padding: 20px 0;
+      position: relative;
+    }
+    .timeline__year {
+      font-family: var(--font-sans); font-size: 13px;
+      color: var(--text-muted); padding-top: 4px;
+      letter-spacing: 0.5px; font-weight: 500;
+    }
+    .timeline__marker {
+      display: flex; justify-content: center;
+      position: relative;
+    }
+    .timeline__dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--red); border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--light-blue);
+      margin-top: 6px; z-index: 2;
+    }
+    .timeline__line {
+      position: absolute;
+      top: 6px; bottom: -20px;
+      left: 50%; transform: translateX(-50%);
+      width: 2px; background: var(--light-blue);
+      z-index: 1;
+    }
+    .timeline__item:last-child .timeline__line { display: none; }
+    .timeline__content h3 {
+      font-size: 19px; font-weight: 500; color: var(--navy-darker);
+      margin: 0 0 4px; line-height: 1.3;
+    }
+    .timeline__content .institution {
+      font-style: italic; color: var(--text-body);
+      font-size: 15px; margin-bottom: 6px;
+    }
+    .timeline__content p {
+      color: var(--text-body); font-size: 14px;
+      line-height: 1.6; margin: 6px 0 0;
+      font-family: var(--font-sans);
+    }
+
+    /* Interests grid */
+    .interests {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .interest-card {
+      background: var(--white);
+      border: 1px solid var(--light-blue);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(30,58,95,0.04);
+    }
+    .interest-card__icon {
+      width: 44px; height: 44px;
+      background: var(--light-blue-soft);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+      color: var(--navy-darker);
+    }
+    .interest-card__icon svg { width: 22px; height: 22px; }
+    .interest-card h3 {
+      font-size: 17px; font-weight: 500; color: var(--navy-darker);
+      margin: 0 0 6px;
+    }
+    .interest-card p {
+      font-family: var(--font-sans); font-size: 13px;
+      color: var(--text-body); line-height: 1.6; margin: 0;
+    }
+
+    /* Aside note (voc rehab mention) */
+    .aside {
+      background: var(--light-blue-soft);
+      border-left: 3px solid var(--red);
+      padding: 22px 26px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-top: 30px;
+    }
+    .aside p {
+      font-size: 15px; color: var(--text-body);
+      line-height: 1.7; margin: 0; font-style: italic;
+    }
+    .aside p strong {
+      color: var(--navy-darker); font-style: normal;
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px;
+      background: var(--red); color: var(--white); text-decoration: none;
+      border-radius: var(--radius-sm); font-family: var(--font-sans);
+      font-size: 14px; font-weight: 500; transition: background 0.15s;
+    }
+    .btn:hover { background: var(--red-hover); text-decoration: none; color: var(--white); }
+    .btn svg { width: 16px; height: 16px; }
+
+    .footer {
+      background: linear-gradient(135deg, #2C4A6E 0%, #1E3A5F 50%, #15294A 100%);
+      color: var(--white); padding: 60px 0 36px; text-align: center;
+    }
+    .footer__title { font-size: 32px; font-weight: 400; font-style: italic; margin: 0 0 8px; color: var(--white); }
+    .footer__subtitle { color: rgba(219,234,254,0.85); font-size: 15px; margin: 0 0 24px; }
+    .footer__links { display: flex; gap: 30px; justify-content: center; margin-top: 28px; font-family: var(--font-sans); font-size: 13px; flex-wrap: wrap; }
+    .footer__links a { color: rgba(219,234,254,0.85); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .footer__links a:hover { color: var(--white); text-decoration: none; }
+    .footer__links svg { width: 16px; height: 16px; }
+    .footer__copyright { font-family: var(--font-sans); font-size: 12px; color: rgba(219,234,254,0.5); margin-top: 28px; }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav__links { display: none; }
+      .page-hero { padding: 44px 0 36px; }
+      .page-hero__title { font-size: 38px; }
+      .section { padding: 50px 0; }
+      .intro { grid-template-columns: 1fr; gap: 26px; text-align: center; }
+      .intro__photo { width: 200px; height: 200px; margin: 0 auto; }
+      .intro__body p:first-child::first-letter { font-size: 44px; }
+      .intro__body { text-align: left; }
+      .interests { grid-template-columns: 1fr; }
+      .section__title { font-size: 28px; }
+      .timeline__item { grid-template-columns: 70px 20px 1fr; gap: 16px; }
+      .timeline__year { font-size: 12px; }
+      .footer__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-band" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Main">
+        <a href="index.html" class="nav__brand">Priya Sakthi</a>
+        <ul class="nav__links">
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mailto:priyasakthi1997@gmail.com">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__eyebrow">— Hello there —</div>
+      <h1 class="page-hero__title">About</h1>
+      <p class="page-hero__subtitle">A bit about who I am, where I've been, and what I'm working on now.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="intro">
+        <img src="https://priyasakthi.com/img/my_img.png" alt="Priya Sakthi" class="intro__photo" onerror="this.style.display='none'">
+        <div class="intro__body">
+          <p>I'm <strong>Priya Sakthi</strong> — a mechanical engineer turned researcher and AI specialist, currently based in St. John's, Newfoundland and Labrador.</p>
+          <p>My work sits at the intersection of <strong>renewable energy systems</strong> and <strong>AI</strong>. On the engineering side, I research and model hydrogen production, hybrid microgrids, and geothermal-based alternatives to diesel generation for remote Canadian communities. On the AI side, I work daily with frontier coding agents — reviewing AI-generated code, designing training tasks and grading rubrics, and building agentic workflows for engineering and research tasks.</p>
+          <p>I came to engineering through a love of how things work — pulling apart problems and putting them back together with better answers. That's still what I do, just with a wider toolbox now: HOMER and PLEXOS for energy modeling, ANSYS for fluid dynamics, SolidWorks for design, and Python, Rust, and a stack of agentic tools for the AI side.</p>
+          <p>Outside of paid work, I write about both worlds on this site and stay actively involved in research — I have <a href="publications.html">three peer-reviewed papers</a> on hydrogen energy systems in Canada, with more in the pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section__intro">
+        <div class="section__eyebrow">— Where I studied —</div>
+        <h2 class="section__title">Education</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline__item">
+          <div class="timeline__year">2022 – 2023</div>
+          <div class="timeline__marker">
+            <div class="timeline__dot"></div>
+            <div class="timeline__line"></div>
+          </div>
+          <div class="timeline__content">
+            <h3>Master of Applied Science · Mechanical Engineering</h3>
+            <div class="institution">Memorial University of Newfoundland, Canada</div>
+            <p>Specialization in energy systems and computational fluid dynamics. Thesis on turbulent flow modeling around tidal turbine foundations using ANSYS.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__year">2014 – 2018</div>
+          <div class="timeline__marker">
+            <div class="timeline__dot"></div>
+          </div>
+          <div class="timeline__content">
+            <h3>Bachelor of Engineering · Mechanical Engineering</h3>
+            <div class="institution">India</div>
+            <p>Foundation in mechanical design, thermodynamics, fluid mechanics, and manufacturing — followed by industry roles in CAD design and food-industry equipment engineering.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__intro">
+        <div class="section__eyebrow">— What excites me —</div>
+        <h2 class="section__title">Interests</h2>
+      </div>
+
+      <div class="interests">
+
+        <div class="interest-card">
+          <div class="interest-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Renewable energy &amp; the energy transition</h3>
+          <p>Designing real systems that move communities off diesel and toward sustainable, locally appropriate power — especially in remote Canadian settings.</p>
+        </div>
+
+        <div class="interest-card">
+          <div class="interest-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="15" x2="22" y2="15"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="15" x2="4" y2="15"/></svg>
+          </div>
+          <h3>Agentic AI &amp; coding tools</h3>
+          <p>Using AI tools the way I'd use any other instrument in the lab — to do real work, save real time, and surface things I'd otherwise miss.</p>
+        </div>
+
+        <div class="interest-card">
+          <div class="interest-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Hydrogen economy &amp; supply chains</h3>
+          <p>Modeling how green hydrogen produced from Canadian renewables can be transported, stored, and used domestically and as an export.</p>
+        </div>
+
+        <div class="interest-card">
+          <div class="interest-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>Technical writing &amp; research</h3>
+          <p>Translating complex engineering and AI work into clear, useful writing — papers, reports, grant proposals, and explainer articles.</p>
+        </div>
+
+        <div class="interest-card">
+          <div class="interest-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Indigenous &amp; remote community energy</h3>
+          <p>Working on projects with real social impact — like microgrid design for Nain, Hopedale, and Natuashish in Newfoundland and Labrador.</p>
+        </div>
+
+        <div class="interest-card">
+          <div class="interest-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h3>Teaching &amp; mentoring</h3>
+          <p>I genuinely enjoy explaining difficult engineering ideas to people newer to the field. It's how I learned, and it's the part of research I love most.</p>
+        </div>
+
+      </div>
+
+      <div class="aside">
+        <p>I'm also a <strong>certified vocational rehabilitation professional</strong> — a separate credential I hold from earlier work. It's not currently a service I offer here, but it informs how I think about meaningful, accessible work and the human side of any project I take on.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <h2 class="footer__title">Want to work together?</h2>
+      <p class="footer__subtitle">Available for engineering consulting and AI projects.</p>
+      <a href="mailto:priyasakthi1997@gmail.com" class="btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        priyasakthi1997@gmail.com
+      </a>
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/priya-sakthi/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/priyasakthi1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="https://scholar.google.com/citations?user=cS_CgbUAAAAJ&hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Google Scholar
+        </a>
+      </div>
+      <div class="footer__copyright">© 2026 Priya Sakthi · St. John's, NL, Canada</div>
+    </div>
+  </footer>
+
+</body>
+</html>
